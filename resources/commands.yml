@@ -1,0 +1,30 @@
+# Command Configuration of BetterMute (c) 2022 by supercrafter333. Licensed under the Apache 2.0 license.
+
+# /mute Command
+mute-name: "mute"
+mute-description: "Mute a player."
+mute-usage: "§4Usage: §r/mute <player> [reason] [time]"
+mute-aliases: ["timetout"]
+
+# /unmute Command
+unmute-name: "unmute"
+unmute-description: "Umute a player."
+unmute-usage: "§4Usage: §r/unmute <player>"
+unmute-aliases: []
+
+# /editmute Command
+editmute-name: "editmute"
+editmute-description: "Edit a mute."
+editmute-usage: "§4Usage: §r/editmute <addtime|reducetime> <player> <time>"
+ueditmute-aliases: ["changemute"]
+
+# /muteinfo Command
+muteinfo-name: "muteinfo"
+muteinfo-description: "See informations about a mute."
+muteinfo-usage: "§4Usage: §r/muteinfo <player>"
+muteinfo-aliases: ["mutedetails"]
+
+
+
+# DON'T CHANGE THIS!!
+version: "1.0.0"

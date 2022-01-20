@@ -1,0 +1,33 @@
+# Default Configuration of BetterMute (c) 2022 by supercrafter333. Licensed under the Apache 2.0 license.
+
+# Mute-Path (string):  [Default: NULL]
+# -> Set your own path for restoring the mute-files
+## Values: NULL (no path), your/path/to/.../mutes.yml (custom path)
+mute-path: "NULL"
+
+# Language (string):  [Default: en_GB]
+# -> Select your own language
+## Languages:
+### en_GB - British English
+### ger_DE - German (Germany)
+### CUSTOM - Edit the message yourself
+language: "en_GB"
+
+# Use-Forms (boolean):  [Default: true]
+# -> Enable/Disable forms
+## Values: true, false
+use-forms: true
+
+# Use Discord-Webhooks (boolean): [Default: false]
+# -> Enable/Disable discord-webhooks
+## Values: true, false
+use-discord-webhooks: false
+# Discord-Webhook URL (only if discord-webhooks are enabled)
+discord-webhook-url: ""
+
+
+
+
+
+# DON'T CHANGE THIS!!
+version: "1.0.0"

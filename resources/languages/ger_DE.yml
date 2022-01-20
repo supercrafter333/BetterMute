@@ -1,0 +1,82 @@
+# Language: German (Germany) - by supercrafter333
+
+# Compatible with: ^1.0.0
+
+
+#######################
+###    Messages     ###
+#######################
+
+# Default messages
+not-muted: "Dein ausgewählter Spieler ({player}) ist nicht stummgeschalten!"
+you-are-muted: "Du bist Stummgeschalten! [Von: {by}, Bis: {until}, Grund: {reason}]"
+
+# Messages for /mute Command
+already-muted: "Der Spieler {player} ist bereits Stummgeschaltet. Wenn du den Mute bearbeiten möchtest, benutze bitte §7/editmute§r."
+muted-success: "De hast erfolgreich {player} bis {until} stummgeschalten."
+muted-success-with-reason: "De hast erfolgreich {player} bis {until} stummgeschalten. Grund: {reason}"
+target-muted-success: "Du wurdest gerade bis {until} von {by} stummgeschalten."
+target-muted-success-with-reason: "Du wurdest gerade bis {until} von {by} stummgeschalten. Grund: {reason}"
+
+# Messages for /unmute Command
+unmuted-success: "Du hast die Stummschaltung von {player} erfolgreich aufgehoben."
+target-unmuted-success: "Deine Stummschaltung wurde gerade von {by} aufgehoben."
+
+# Messages for /editmute Command
+permanently-muted: "{player} ist permanent Stummgeschaltet. Du kannst nicht den Mute eines permanent Stummgeschaltetem Spielers bearbeiten."
+mutetime-success: "Du hast erfolgreich die Mute-Zeit von {player} bearbeitet. Neues Mute-Datum: {newDate}"
+negative-time: "Du kannst das Mute-Datum nicht unter das heutige setzen!"
+
+# Messages for /muteinfo Command
+mute-info: "§7-----------===== §eMute-Info über §b{player} §7=====-----------§r{line}Bis: §6{until}§r{line}Von: §6{by}§r{line}Grund: §b{reason}§r{line}"
+
+
+####################
+###    Forms     ###
+####################
+
+# Mute form
+form_mute-title: "Mute"
+form_mute-main-content: "Bitte wähle einen Spieler aus."
+form_mute-main-offlinePlayer-button: "Offline-Spieler"
+form_mute-inputPlayer-content: "Bitte schreibe den Name des Spielers in das Feld unter dieser Nachricht."
+form_mute-inputPlayer-inputField: "Name"
+form_mute-submitMute-content: "Bitte stelle die Zeit und den Grund in den folgenden Einstellungs- und Textfeldern ein."
+
+# Unmute form
+form_unmute-title: "Entmuten"
+form_unmute-main-content: "Bitte klicke auf den Spieler, den du entmuten möchtest."
+
+# Editmute form
+form_editmute-title: "Mute bearbeiten"
+form_editmute-main-content: "Bitte klicke auf den Spieler, dessen Mute du bearbeiten möchtest."
+form_editmute-selectTime-content: "Bitte wähle eine Methode aus."
+form_editmute-reduceTime-title: "Mute-Zeit verringern"
+form_editmute-reduceTime-content: "Hier kannst du die Mute-Zeit verringern."
+form_editmute-addTime-title: "Mute-Zeit hinzufügen"
+form_editmute-addTime-content: "Hier kannst du Zeit zur Mute-Zeit hinzufügen."
+
+# Muteinfo form
+form_muteinfo-title: "Mute Information"
+form_muteinfo-main-content: "Bitte wähle einen Spieler aus."
+form_muteinfo-muteInfo: "§7{player}:§r{line}   §7Bis: §6{until}§r{line}   §7Von: §6{by}§r{line}   §7Grund: §6{reason}{line}"
+
+
+######################
+###    Webhooks    ###
+######################
+
+# Mute webhook
+webhook_mute_title: "Spieler wurde Stummgeschaltet!"
+webhook_mute_content: "Der Spieler `{player}` wurde Stummgeschaltet!{line}Stummgeschalten bis: `{until}`{line}Von: `{by}`{line}Grund: `{reason}`"
+webhook_mute_color: 15158332
+
+# Unmute webhook
+webhook_unmute_title: "Stummschaltung eines Spielers wurde aufgehoben!"
+webhook_unmute_content: "Die Stummschaltung des Spielers `{player}` wurde von {by} aufgehoben!"
+webhook_unmute_color: 3066993
+
+# Editmute webhook
+webhook_editmute_title: "Stummschaltung bearbeitet!"
+webhook_editmute_content: "Die Stummschaltung von `{player}` wurde bearbeitet!{line}Neues Datum: `{newDate}`"
+webhook_editmute_color: 16776960

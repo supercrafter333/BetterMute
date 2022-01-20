@@ -1,0 +1,26 @@
+name: BetterMute
+version: 1.0.0
+api: 4.0.0
+main: supercrafter333\BetterMute\BetterMute
+author: supercrafter333
+
+description: A PocketMine-MP plugin that allows you to mute players permanently and for a specific time.
+website: https://github.com/supercrafter333/BetterMute
+
+permissions:
+  BetterMute.admin:
+    description: Bypass permission
+    default: op
+    # children of BetterMute.admin:
+  BetterMute.mute.cmd:
+    description: Command permission
+    default: op
+  BetterMute.unmute.cmd:
+    description: Command permission
+    default: op
+  BetterMute.editmute.cmd:
+    description: Command permission
+    default: op
+  BetterMute.muteinfo.cmd:
+    description: Command permission
+    default: op

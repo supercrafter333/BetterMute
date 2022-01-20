@@ -1,0 +1,85 @@
+# Compatible with: ^1.0.0
+
+
+#######################
+###    Messages     ###
+#######################
+
+# Default messages
+not-muted: "Your selected player ({player}) isn't muted!"
+you-are-muted: "You're muted! [By: {by}, Until: {until}, Reason: {reason}]"
+
+# Messages for /mute Command
+already-muted: "The player {player} is already muted. If you would like to edit the mute, please use §7/editmute§r."
+muted-success: "You've successfully muted the player {player} until {until}."
+muted-success-with-reason: "You've successfully muted the player {player} until {until}. Reason: {reason}"
+target-muted-success: "You've been muted until {until} by {by}."
+target-muted-success-with-reason: "You've been muted until {until} by {by}. Reason: {reason}"
+
+# Messages for /unmute Command
+unmuted-success: "You've successfully unmuted {player}."
+target-unmuted-success: "You've now been unmuted by {by}."
+
+# Messages for /editmute Command
+permanently-muted: "{player} is permanently muted. You can't edit the mute-time of a permanently muted player."
+mutetime-success: "You've successfully edit the mute-time of {player}. New mute-date: {newDate}"
+negative-time: "You cannot set the mute date below the now date!"
+
+# Messages for /muteinfo Command
+mute-info: "§7-----------===== §eMute-Info about §b{player} §7=====-----------§r{line}Until: §6{until}§r{line}By: §6{by}§r{line}Reason: §b{reason}§r{line}"
+
+
+####################
+###    Forms     ###
+####################
+
+# Mute form
+form_mute-title: "Mute"
+form_mute-main-content: "Please select a player."
+form_mute-main-offlinePlayer-button: "Offline-Player"
+form_mute-inputPlayer-content: "Please write the player's name into the field under this text."
+form_mute-inputPlayer-inputField: "Name"
+form_mute-submitMute-content: "Please set the mute-time and the reason for the mute in the following setup and input fields."
+
+# Unmute form
+form_unmute-title: "Unmute"
+form_unmute-main-content: "Please click on the player you would like to unmute."
+
+# Editmute form
+form_editmute-title: "Edit Mute"
+form_editmute-main-content: "Please click on the player whose mute you want to edit."
+form_editmute-selectTime-content: "Please chose a method."
+form_editmute-reduceTime-title: "Reduce Mute-Time"
+form_editmute-reduceTime-content: "Here you can reduce the mute-time."
+form_editmute-addTime-title: "Add Mute-Time"
+form_editmute-addTime-content: "Here you can add time to the mute-time."
+
+# Muteinfo form
+form_muteinfo-title: "Mute Information"
+form_muteinfo-main-content: "Please select a player."
+form_muteinfo-muteInfo: "§7{player}:§r{line}   §7Until: §6{until}§r{line}   §7By: §6{by}§r{line}   §7Reason: §6{reason}{line}"
+
+
+######################
+###    Webhooks    ###
+######################
+
+# Mute webhook
+webhook_mute_title: "Player was muted!"
+webhook_mute_content: "The player `{player}` was muted!{line}Muted until: `{until}`{line}Muted by: `{by}`{line}Reason: `{reason}`"
+webhook_mute_color: 15158332
+
+# Unmute webhook
+webhook_unmute_title: "Player was unmuted!"
+webhook_unmute_content: "The player `{player}` was unmuted by {by}!"
+webhook_unmute_color: 3066993
+
+# Editmute webhook
+webhook_editmute_title: "Mute was edited!"
+webhook_editmute_content: "The mute of `{player}` was edited!{line}New Unmute-Date: `{newDate}`"
+webhook_editmute_color: 16776960
+
+
+
+# DON'T CHANGE THIS!!
+version: "1.0.0"
