@@ -20,6 +20,7 @@
 | `/unmute`   | Unmute a muted player.         | `BetterMute.unmute.cmd`   |
 | `/editmute` | Edit the mute of a muted player. | `BetterMute.editmute.cmd` |
 | `/muteinfo` | See informations about a mute. | `BetterMute.muteinfo.cmd` |
+
 [Admin permission: `BetterMute.admin`]
 
 ### Bugreport
