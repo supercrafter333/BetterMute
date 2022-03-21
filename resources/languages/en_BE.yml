@@ -1,6 +1,6 @@
 # Language: British English - by supercrafter333
 
-# Compatible with: ^1.0.0
+# Compatible with: ^1.1.0
 
 
 #######################
@@ -13,10 +13,11 @@ you-are-muted: "You're muted! [By: {by}, Until: {until}, Reason: {reason}]"
 
 # Messages for /mute Command
 already-muted: "The player {player} is already muted. If you would like to edit the mute, please use §7/editmute§r."
-muted-success: "You've successfully muted the player {player} until {until}."
-muted-success-with-reason: "You've successfully muted the player {player} until {until}. Reason: {reason}"
-target-muted-success: "You've been muted until {until} by {by}."
-target-muted-success-with-reason: "You've been muted until {until} by {by}. Reason: {reason}"
+muted-success: "You've successfully muted the player {player} until {until} (these are: {y} years, {m} months, {d} days, {h} hours and {i} minutes)."
+muted-success-with-reason: "You've successfully muted the player {player} until {until} (these are: {y} years, {m} months, {d} days, {h} hours and {i} minutes). Reason: {reason}"
+target-muted-success: "You've been muted until {until} by {by}." #here you can use {y}, {m}, {d}, {h} and {i} too
+target-muted-success-with-reason: "You've been muted until {until} by {by}. Reason: {reason}" #here you can use {y}, {m}, {d}, {h} and {i} too
+muted-broadcast: "The player {player} was muted by {by}!"
 
 # Messages for /unmute Command
 unmuted-success: "You've successfully unmuted {player}."

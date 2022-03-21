@@ -15,7 +15,7 @@ class CommandConfigManager
     public static function startup(): void
     {
         BetterMute::getInstance()->saveResource("commands.yml");
-        ConfigManager::updateConfig(new Config(BetterMute::getInstance()->getDataFolder() . "commands.yml", Config::YAML), BetterMute::getInstance()->getDataFolder(), "commands.yml");
+        ConfigManager::updateConfig(new Config(BetterMute::getInstance()->getDataFolder() . "commands.yml", Config::YAML), BetterMute::getInstance()->getDataFolder(), "commands.yml", ConfigManager::UPDATE_COMMANDS);
     }
 
     /**

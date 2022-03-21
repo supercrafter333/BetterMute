@@ -1,6 +1,6 @@
 # Language: German (Germany) - by supercrafter333
 
-# Compatible with: ^1.0.0
+# Compatible with: ^1.1.0
 
 
 #######################
@@ -13,10 +13,11 @@ you-are-muted: "Du bist Stummgeschalten! [Von: {by}, Bis: {until}, Grund: {reaso
 
 # Messages for /mute Command
 already-muted: "Der Spieler {player} ist bereits Stummgeschaltet. Wenn du den Mute bearbeiten möchtest, benutze bitte §7/editmute§r."
-muted-success: "De hast erfolgreich {player} bis {until} stummgeschalten."
-muted-success-with-reason: "De hast erfolgreich {player} bis {until} stummgeschalten. Grund: {reason}"
-target-muted-success: "Du wurdest gerade bis {until} von {by} stummgeschalten."
-target-muted-success-with-reason: "Du wurdest gerade bis {until} von {by} stummgeschalten. Grund: {reason}"
+muted-success: "De hast erfolgreich {player} bis {until} stummgeschalten (das entspricht: {m} Monaten, {d} Tagen, {h} Stunden und {i} Minuten)."
+muted-success-with-reason: "Du hast erfolgreich {player} bis {until} stummgeschalten (das entspricht: {m} Monaten, {d} Tagen, {h} Stunden und {i} Minuten). Grund: {reason}"
+target-muted-success: "Du wurdest gerade bis {until} von {by} stummgeschalten." #here you can use {m}, {d}, {h} and {i} too
+target-muted-success-with-reason: "Du wurdest gerade bis {until} von {by} stummgeschalten. Grund: {reason}" #here you can use {m}, {d}, {h} and {i} too
+muted-broadcast: "Der Spieler {player} wurde von {by} stummgeschaltet!"
 
 # Messages for /unmute Command
 unmuted-success: "Du hast die Stummschaltung von {player} erfolgreich aufgehoben."

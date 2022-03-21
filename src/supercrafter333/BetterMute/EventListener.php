@@ -42,12 +42,10 @@ class EventListener implements Listener
     public function onMute(BMMuteEvent $ev): void
     {
         if (!$ev->isCancelled()) DiscordWebhookManager::muteMessage($ev->getMute());
-        print "called!";
     }
 
     public function onPreUnmute(BMPreUnmuteEvent $ev): void
     {
-        print "called!";
         if (!$ev->isCancelled()) DiscordWebhookManager::unmuteMessage($ev->getUnmutedPlayerName(), $ev->getUnmutedByName());
         if ($ev->getUnmutedByName() == "AUTOMATICALLY") {
             BetterMute::getInstance()->getServer()->getPlayerExact($ev->getUnmutedPlayerName())?->sendMessage(LanguageMgr::getMsg("target-unmuted-success", ["{by}" => $ev->getUnmutedByName()]));
@@ -57,6 +55,5 @@ class EventListener implements Listener
     public function onEditmute(BMEditMuteEvent $ev): void
     {
         if (!$ev->isCancelled()) DiscordWebhookManager::editmuteMessage($ev->getMute());
-        print "called!";
     }
 }

@@ -25,9 +25,14 @@ use-discord-webhooks: false
 # Discord-Webhook URL (only if discord-webhooks are enabled)
 discord-webhook-url: ""
 
+# Send broadcast-message for mutes (boolean): [Default: true]
+# -> Should BetterMute send a broadcast-message for mutes?
+## Values: true, false
+send-broadcast-messages: true
+
 
 
 
 
 # DON'T CHANGE THIS!!
-version: "1.0.0"
+version: "1.1.0"

@@ -88,6 +88,11 @@ class BetterMute extends PluginBase
         return $this->getFile();
     }
 
+    public function useBroadcastMessages(): bool
+    {
+        if (($send = $this->getConfig()->get("send-broadcast-messages", false)) !== true && $send !== "on") return false;
+        return true;
+    }
 
 
     # Copied from https://github.com/supercrafter333/BetterBan/blob/master/src/supercrafter333/BetterBan/BetterBan.php

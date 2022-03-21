@@ -2,20 +2,25 @@
 
 namespace supercrafter333\BetterMute\Manager\Configuration;
 
-use CortexPE\DiscordWebhookAPI\Webhook;
 use dktapps\pmforms\BaseForm;
 use pocketmine\utils\Config;
 use supercrafter333\BetterMute\BetterMute;
+use supercrafter333\DiscordWebhooksX\Webhook;
 
 class ConfigManager
 {
 
-    const CURRENT_CONFIG_VERSION = "1.0.0";
+    const CURRENT_CONFIG_VERSION = "1.1.0";
+
+    const UPDATE_CONFIG = true;
+    const UPDATE_MESSAGES = true;
+    const UPDATE_COMMANDS = false;
+
 
     public static function startup(): void
     {
         BetterMute::getInstance()->saveResource("config.yml");
-        self::updateConfig(BetterMute::getInstance()->getConfig(), BetterMute::getInstance()->getDataFolder(), "config.yml");
+        self::updateConfig(BetterMute::getInstance()->getConfig(), BetterMute::getInstance()->getDataFolder(), "config.yml", self::UPDATE_CONFIG);
     }
 
     public static function getConfig(): Config
@@ -63,7 +68,12 @@ class ConfigManager
         return self::getConfig()->get($k, $default);
     }
 
-    public static function updateConfig(Config $config, string $pathTo, string $fullFileName, string $saveName = null): void
+    public static function sendBrMsg(): bool
+    {
+        return self::get("send-broadcast-message", false);
+    }
+
+    public static function updateConfig(Config $config, string $pathTo, string $fullFileName, bool $update = true, string $saveName = null): void
     {
         if (!file_exists($config->getPath())) return;
 
@@ -72,6 +82,12 @@ class ConfigManager
         if ($version >= self::CURRENT_CONFIG_VERSION) return;
 
         $logger = BetterMute::getInstance()->getLogger();
+
+        if (!$update) {
+            $logger->info("Old configuration file " . $fullFileName . " detected. Configuration-update is not required.");
+            return;
+        }
+
         $logger->warning("Old configuration file " . $fullFileName . " detected. Beginning auto-update...");
 
         $microtime = microtime(true);

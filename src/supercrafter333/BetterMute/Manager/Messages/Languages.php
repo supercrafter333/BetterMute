@@ -33,7 +33,7 @@ class Languages
         $rawLang = BetterMute::getInstance()->getConfig()->get("language");
         if (strtolower($rawLang) == "custom") {
             BetterMute::getInstance()->saveResource("languages/messages.yml");
-            ConfigManager::updateConfig(new Config(BetterMute::getInstance()->getDataFolder() . "languages/" . "messages.yml", Config::YAML), BetterMute::getInstance()->getDataFolder() . "languages/", "messages.yml", "languages/messages.yml");
+            ConfigManager::updateConfig(new Config(BetterMute::getInstance()->getDataFolder() . "languages/" . "messages.yml", Config::YAML), BetterMute::getInstance()->getDataFolder() . "languages/", "messages.yml", ConfigManager::UPDATE_MESSAGES, "languages/messages.yml");
             return new Config(BetterMute::getInstance()->getDataFolder() . "languages/messages.yml", Config::YAML);
         }
         if (isset(self::$languages[$rawLang]) && file_exists(BetterMute::getInstance()->getFile2() . "resources/languages/" . $rawLang . ".yml")) return new Config(BetterMute::getInstance()->getFile2() . "resources/languages/" . $rawLang . ".yml", Config::YAML);

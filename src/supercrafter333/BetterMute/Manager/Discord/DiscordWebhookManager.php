@@ -2,9 +2,9 @@
 
 namespace supercrafter333\BetterMute\Manager\Discord;
 
-use CortexPE\DiscordWebhookAPI\Embed;
-use CortexPE\DiscordWebhookAPI\Message;
-use CortexPE\DiscordWebhookAPI\Webhook;
+use supercrafter333\DiscordWebhooksX\Embed;
+use supercrafter333\DiscordWebhooksX\Message;
+use supercrafter333\DiscordWebhooksX\Webhook;
 use supercrafter333\BetterMute\Manager\Configuration\ConfigManager;
 use supercrafter333\BetterMute\Manager\Info\Mute;
 use supercrafter333\BetterMute\Manager\Messages\LanguageMgr;
@@ -21,10 +21,7 @@ class DiscordWebhookManager
     {
         $webhook = new Webhook(ConfigManager::getDiscordWebhookUrl());
 
-        $msg = new Message();
-        $msg->addEmbed($embed);
-
-        $webhook->send($msg);
+        $webhook->send(Message::create([$embed]));
     }
 
     public static function muteMessage(Mute $mute): void
@@ -36,24 +33,20 @@ class DiscordWebhookManager
         $until = $mute->isPermanentlyMuted() ? "PERMANENTLY" : $mute->getMutedUntil()->format("Y.m.d H:i:s");
         $reason = $mute->getReason() === null ? "---" : $mute->getReason();
 
-        $embed = new Embed();
-        $embed->setTitle(self::getWebhookInfo("mute", "title"));
-        $embed->setDescription(LanguageMgr::getMsg("webhook_mute_content", ["{player}" => $name, "{by}" => $by, "{until}" => $until, "{reason}" => $reason]));
-        $embed->setColor(self::getWebhookInfo("mute", "color"));
-
-        self::simpleSendWebhook($embed);
+        self::simpleSendWebhook(Embed::create()
+        ->setTitle(self::getWebhookInfo("mute", "title"))
+        ->setDescription(LanguageMgr::getMsg("webhook_mute_content", ["{player}" => $name, "{by}" => $by, "{until}" => $until, "{reason}" => $reason]))
+        ->setColor(self::getWebhookInfo("mute", "color")));
     }
     
     public static function unmuteMessage(string $playerName, string $unmutedBy): void
     {
         if (!ConfigManager::useDiscordWebhooks()) return;
 
-        $embed = new Embed();
-        $embed->setTitle(self::getWebhookInfo("unmute", "title"));
-        $embed->setDescription(LanguageMgr::getMsg("webhook_unmute_content", ["{player}" => $playerName, "{by}" => $unmutedBy]));
-        $embed->setColor(self::getWebhookInfo("unmute", "color"));
-
-        self::simpleSendWebhook($embed);
+        self::simpleSendWebhook(Embed::create()
+        ->setTitle(self::getWebhookInfo("unmute", "title"))
+        ->setDescription(LanguageMgr::getMsg("webhook_unmute_content", ["{player}" => $playerName, "{by}" => $unmutedBy]))
+        ->setColor(self::getWebhookInfo("unmute", "color")));
     }
 
     public static function editmuteMessage(Mute $mute): void //add $editedBy ??? To-Do?
@@ -65,11 +58,9 @@ class DiscordWebhookManager
         $until = $mute->isPermanentlyMuted() ? "PERMANENTLY" : $mute->getMutedUntil()->format("Y.m.d H:i:s");
         $reason = $mute->getReason() === null ? "---" : $mute->getReason();
 
-        $embed = new Embed();
-        $embed->setTitle(self::getWebhookInfo("editmute", "title"));
-        $embed->setDescription(LanguageMgr::getMsg("webhook_editmute_content", ["{player}" => $playerName, "{newDate}" => $until, "{reason}" => $reason, "{mutedBy}" => $mutedBy]));
-        $embed->setColor(self::getWebhookInfo("editmute", "color"));
-
-        self::simpleSendWebhook($embed);
+        self::simpleSendWebhook(Embed::create()
+        ->setTitle(self::getWebhookInfo("editmute", "title"))
+        ->setDescription(LanguageMgr::getMsg("webhook_editmute_content", ["{player}" => $playerName, "{newDate}" => $until, "{reason}" => $reason, "{mutedBy}" => $mutedBy]))
+        ->setColor(self::getWebhookInfo("editmute", "color")));
     }
 }

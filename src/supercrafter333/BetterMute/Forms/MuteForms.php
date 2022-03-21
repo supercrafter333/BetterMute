@@ -2,6 +2,7 @@
 
 namespace supercrafter333\BetterMute\Forms;
 
+use DateTime;
 use dktapps\pmforms\CustomForm;
 use dktapps\pmforms\CustomFormResponse;
 use dktapps\pmforms\element\Input;
@@ -91,17 +92,32 @@ class MuteForms
                     return;
                 }
                 $untilDate = $res["perma"] ? "PERMANENTLY" : $now;
+                $until_dt = is_string($untilDate) ? null : $untilDate;
                 MuteManager::simpleMute($playerName, $submitter->getName(), $untilDate, $reason);
 
                 $until = $res["perma"] ? "PERMANENTLY" : $untilDate->format("Y.m.d H:i:s");
                 $player = Server::getInstance()->getPlayerExact($playerName);
 
+                $timeDifference = function (string $message) use ($until_dt): string
+                {
+                    $diff = $until_dt->diff(new DateTime('now'));
+                    if ($until_dt === null) return str_replace(["{y}", "{m}", "{d}", "{h}", "{i}"], ["permanent", "permanent", "permanent", "permanent"], $message);
+
+                    return str_replace(
+                        ["{y}", "{m}", "{d}", "{h}", "{i}"],
+                        [(string)$diff->y, (string)$diff->m, (string)$diff->d, (string)$diff->h, (string)$diff->i],
+                        $message
+                    );
+                };
+
+                if (BetterMute::getInstance()->useBroadcastMessages()) BetterMute::getInstance()->getServer()->broadcastMessage(LanguageMgr::getMsg("muted-broadcast", ["{player}" => $playerName, "{by}" => $submitter->getName()]));
+
                 if ($reason === null) {
-                    $submitter->sendMessage(LanguageMgr::getMsg("muted-success", ["{player}" => $playerName, "{until}" => $until]));
-                    $player?->sendMessage(LanguageMgr::getMsg("target-muted-success", ["{by}" => $submitter->getName(), "{until}" => $until]));
+                    $submitter->sendMessage($timeDifference(LanguageMgr::getMsg("muted-success", ["{player}" => $playerName, "{until}" => $until])));
+                    $player?->sendMessage($timeDifference(LanguageMgr::getMsg("target-muted-success", ["{by}" => $submitter->getName(), "{until}" => $until])));
                 } else {
-                    $submitter->sendMessage(LanguageMgr::getMsg("muted-success-with-reason", ["{player}" => $playerName, "{until}" => $until, "{reason}" => $reason]));
-                    $player?->sendMessage(LanguageMgr::getMsg("target-muted-success-with-reason", ["{by}" => $submitter->getName(), "{until}" => $until, "{reason}" => $reason]));
+                    $submitter->sendMessage($timeDifference(LanguageMgr::getMsg("muted-success-with-reason", ["{player}" => $playerName, "{until}" => $until, "{reason}" => $reason])));
+                    $player?->sendMessage($timeDifference(LanguageMgr::getMsg("target-muted-success-with-reason", ["{by}" => $submitter->getName(), "{until}" => $until, "{reason}" => $reason])));
                 }
                 return;
             }
