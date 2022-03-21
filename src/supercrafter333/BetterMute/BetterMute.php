@@ -38,7 +38,7 @@ class BetterMute extends PluginBase
         $this->saveResource("commands.yml");
         ConfigManager::startup();
         CommandConfigManager::startup();
-        Languages::getLanguage();
+        Languages::getLanguageData();
 
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 
