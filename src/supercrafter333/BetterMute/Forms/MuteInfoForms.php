@@ -31,7 +31,7 @@ class MuteInfoForms
             $playerButtons,
             function (Player $submitter, int $selected) use ($playerButtons): void {
                 $playerName = $playerButtons[$selected]->getText();
-
+                $submitter->sendForm(self::muteInfo($playerName));
             }
         );
     }
