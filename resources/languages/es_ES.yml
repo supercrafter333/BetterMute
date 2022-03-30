@@ -79,8 +79,3 @@ webhook_unmute_color: 3066993
 webhook_editmute_title: "Un silencio ha sido editado!"
 webhook_editmute_content: "El silencio de `{player}` ha sido editado!{line}Nueva fecha de silencio: `{newDate}`"
 webhook_editmute_color: 16776960
-
-
-
-# DON'T CHANGE THIS!!
-version: "1.1.0"
