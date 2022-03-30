@@ -1,0 +1,86 @@
+# Compatible con: ^1.1.0
+
+
+#######################
+###    Mensajes     ###
+#######################
+
+# Mensajes por defecto
+not-muted: "El jugador seleccionado ({player}) no está silenciado!"
+you-are-muted: "Estás silenciado! [Por: {by}, Hasta: {until}, Motivo: {reason}]"
+
+# Mensajes para el comando /mute
+already-muted: "El jugador {player} ya está silenciado. Si quieres editar el silencio, utiliza §7/editmute§r."
+muted-success: "Has silenciado con éxito al jugador {player} hasta {until} (estos son: {m} meses, {d} días, {h} horas y {i} minutos)."
+muted-success-with-reason: "Has silenciado con éxito al jugador {player} hasta {until} (estos son: {m} meses, {d} días, {h} horas y {i} minutos). Motivo: {reason}"
+target-muted-success: "Has sido silenciado hasta {until} por {by}." #aquí puedes utilizar {m}, {d}, {h} y {i} también
+target-muted-success-with-reason: "Has sido silenciado hasta {until} por {by}. Motivo: {reason}" #aquí puedes utilizar {m}, {d}, {h} y {i} también
+muted-broadcast: "El jugador {player} ha sido silenciado por {by}!"
+
+# Mensajes para el comando /unmute
+unmuted-success: "Has desilenciado con éxito a {player}."
+target-unmuted-success: "Has sido desilenciado por {by}."
+
+# Mensajes para el comando /editmute
+permanently-muted: "{player} está permanentemente silenciado. No se puede editar el tiempo de silencio de un jugador permanentemente silenciado."
+mutetime-success: "Has editado con éxito el tiempo de silencio de {player}. Nueva fecha de silencio: {newDate}"
+negative-time: "No se puede fijar la fecha de silenciamiento por debajo de la fecha actual!"
+
+# Mensajes para el comando /muteinfo
+mute-info: "§7-----------===== §eInfo sobre el silencio §b{player} §7=====-----------§r{line}Hasta: §6{until}§r{line}Por: §6{by}§r{line}Motivo: §b{reason}§r{line}"
+
+
+####################
+###    Forms     ###
+####################
+
+# FormaUI del Mute
+form_mute-title: "Silenciar"
+form_mute-main-content: "Seleccione un jugador."
+form_mute-main-offlinePlayer-button: "El jugador no está conectado"
+form_mute-inputPlayer-content: "Por favor, escribe el nombre del jugador debajo de este texto."
+form_mute-inputPlayer-inputField: "Nombre"
+form_mute-submitMute-content: "Por favor, establezca el tiempo de silenciamiento y el motivo del mismo en los siguientes campos."
+
+# FormaUI del Unnmute
+form_unmute-title: "Desilenciar"
+form_unmute-main-content: "Por favor, haz clic en el jugador el cual desea anular el silencio."
+
+# FormaUI del Editmute
+form_editmute-title: "Editar el silencio"
+form_editmute-main-content: "Haz clic en el jugador cuyo silencio desea editar."
+form_editmute-selectTime-content: "Por favor, elige un método."
+form_editmute-reduceTime-title: "Reducir el tiempo de silencio"
+form_editmute-reduceTime-content: "Aquí puedes reducir el tiempo de silencio."
+form_editmute-addTime-title: "Añadir tiempo de silencio"
+form_editmute-addTime-content: "Aquí puedes añadir tiempo al tiempo de silencio."
+
+# FormaUI del Muteinfo
+form_muteinfo-title: "Información sobre el silencio"
+form_muteinfo-main-content: "Por favor, elige un jugador."
+form_muteinfo-muteInfo: "§7{player}:§r{line}   §7Hasta: §6{until}§r{line}   §7Por: §6{by}§r{line}   §7Motivo: §6{reason}{line}"
+
+
+######################
+###    Webhooks    ###
+######################
+
+# Mute webhook
+webhook_mute_title: "Un jugador ha sido silenciado!"
+webhook_mute_content: "El jugador `{player}` ha sido silenciado!{line}Silenciado hasta: `{until}`{line}Silenciado por: `{by}`{line}Motivo: `{reason}`"
+webhook_mute_color: 15158332
+
+# Unmute webhook
+webhook_unmute_title: "Un jugador ha sido desilenciado!"
+webhook_unmute_content: "El jugador `{player}` ha sido desilenciado{line}Silenciado por: `{by}`!"
+webhook_unmute_color: 3066993
+
+# Editmute webhook
+webhook_editmute_title: "Un silencio ha sido editado!"
+webhook_editmute_content: "El silencio de `{player}` ha sido editado!{line}Nueva fecha de silencio: `{newDate}`"
+webhook_editmute_color: 16776960
+
+
+
+# DON'T CHANGE THIS!!
+version: "1.1.0"
