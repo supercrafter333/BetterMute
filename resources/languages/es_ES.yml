@@ -72,7 +72,7 @@ webhook_mute_color: 15158332
 
 # Unmute webhook
 webhook_unmute_title: "Un jugador ha sido desilenciado!"
-webhook_unmute_content: "El jugador `{player}` ha sido desilenciado{line}Silenciado por: `{by}`!"
+webhook_unmute_content: "El jugador `{player}` ha sido desilenciado por `{by}`!"
 webhook_unmute_color: 3066993
 
 # Editmute webhook
