@@ -10,6 +10,7 @@ mute-path: "NULL"
 ## Languages:
 ### en_GB - British English
 ### ger_DE - German (Germany)
+### es_ES - Spanish (España)
 ### CUSTOM - Edit the message yourself
 language: "en_GB"
 
