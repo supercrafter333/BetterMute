@@ -1,5 +1,5 @@
 [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/ca6cWPpERp)
-# BetterMute - v1.1.0 [![](https://poggit.pmmp.io/shield.state/BetterMute)](https://poggit.pmmp.io/p/BetterMute) [![](https://poggit.pmmp.io/shield.dl.total/BetterMute)](https://poggit.pmmp.io/p/BetterMute)
+# BetterMute - v1.1.1 [![](https://poggit.pmmp.io/shield.state/BetterMute)](https://poggit.pmmp.io/p/BetterMute) [![](https://poggit.pmmp.io/shield.dl.total/BetterMute)](https://poggit.pmmp.io/p/BetterMute)
 
 
 **A PocketMine-MP plugin that allows you to mute players permanently and for a specific time.**
