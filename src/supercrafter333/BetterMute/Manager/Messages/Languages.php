@@ -12,6 +12,7 @@ class Languages
     public const LANG_en_BE = "en_BE"; # Britisch English
     //TODO: public const LANG_en_AE = "en_AE"; # American English
     public const LANG_ger_DE = "ger_DE";
+    public const LANG_es_ES = "es_ES"; # Spanish (España)
     public const LANG_CUSTOM = "messages";
 
     /**
@@ -21,6 +22,7 @@ class Languages
     public static array $languages = [
         self::LANG_en_BE => self::LANG_en_BE,
         self::LANG_ger_DE, self::LANG_ger_DE,
+        self::LANG_es_ES => self::LANG_es_ES,
         self::LANG_CUSTOM => self::LANG_CUSTOM
     ];
 
