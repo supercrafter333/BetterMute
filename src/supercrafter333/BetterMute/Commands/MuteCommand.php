@@ -44,7 +44,7 @@ class MuteCommand extends BetterMuteCommand
             if (isset($args[0])) {
                 $reason = array_shift($args);
             }
-            if (isset($args[0])) {
+            if (isset($args[1])) {
                 $until = implode(" ", $args);
             }
 
@@ -59,6 +59,11 @@ class MuteCommand extends BetterMuteCommand
                  */
                 $until = BetterMute::getInstance()->stringToTimestamp($until)[0];
             } elseif (mb_strtoupper($until) === "PERMANENTLY" || mb_strtoupper($until) === "PERMANENT" || mb_strtoupper($until) === "PERMA") $until = "PERMANENTLY";
+
+            if ($until === null) {
+                $s->sendMessage($this->usageMessage);
+                return;
+            }
 
             MuteManager::simpleMute($name, $s->getName(), $until, $reason);
 
