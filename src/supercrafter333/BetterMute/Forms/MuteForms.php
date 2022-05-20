@@ -100,9 +100,9 @@ class MuteForms
 
                 $timeDifference = function (string $message) use ($until_dt): string
                 {
-                    $diff = $until_dt->diff(new DateTime('now'));
                     if ($until_dt === null) return str_replace(["{y}", "{m}", "{d}", "{h}", "{i}"], ["permanent", "permanent", "permanent", "permanent"], $message);
 
+                    $diff = $until_dt->diff(new DateTime('now'));
                     return str_replace(
                         ["{y}", "{m}", "{d}", "{h}", "{i}"],
                         [(string)$diff->y, (string)$diff->m, (string)$diff->d, (string)$diff->h, (string)$diff->i],
