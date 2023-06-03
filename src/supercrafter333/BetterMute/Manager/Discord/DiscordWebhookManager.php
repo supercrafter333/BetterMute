@@ -2,12 +2,12 @@
 
 namespace supercrafter333\BetterMute\Manager\Discord;
 
-use supercrafter333\DiscordWebhooksX\Embed;
-use supercrafter333\DiscordWebhooksX\Message;
-use supercrafter333\DiscordWebhooksX\Webhook;
 use supercrafter333\BetterMute\Manager\Configuration\ConfigManager;
 use supercrafter333\BetterMute\Manager\Info\Mute;
 use supercrafter333\BetterMute\Manager\Messages\LanguageMgr;
+use supercrafter333\DiscordWebhooksX\Embed;
+use supercrafter333\DiscordWebhooksX\Message;
+use supercrafter333\DiscordWebhooksX\Webhook;
 
 class DiscordWebhookManager
 {

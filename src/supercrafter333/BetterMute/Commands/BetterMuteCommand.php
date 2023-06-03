@@ -51,7 +51,7 @@ abstract class BetterMuteCommand extends Command implements PluginOwned
      */
     public function canUse(CommandSender|Player $sender, bool $checkIsPlayer = false): bool
     {
-        if ($this->getPermission() !== null && !$this->testPermission($sender, $this->getPermission())) return false;
+        if ($this->getPermissions()[0] !== null && !$this->testPermission($sender, $this->getPermissions()[0])) return false;
 
         if ($checkIsPlayer && !$sender instanceof Player) {
             $sender->sendMessage("Only In-Game!");

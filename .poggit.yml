@@ -10,5 +10,5 @@ projects:
       - src: poggit.pmmp.io/ci/supercrafter333/DiscordWebhooksX/DiscordWebhooksX
         version: ^1.0.0
       - src: dktapps-pm-pl/pmforms/pmforms
-        version: ^2.0.0
+        version: ^2.1.0
 ...

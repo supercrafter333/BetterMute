@@ -3,13 +3,11 @@
 namespace supercrafter333\BetterMute\Commands;
 
 use DateTime;
-use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use supercrafter333\BetterMute\BetterMute;
 use supercrafter333\BetterMute\Forms\MuteForms;
 use supercrafter333\BetterMute\Manager\Configuration\ConfigManager;
-use supercrafter333\BetterMute\Manager\Info\Mute;
 use supercrafter333\BetterMute\Manager\Messages\LanguageMgr;
 use supercrafter333\BetterMute\Manager\MuteManager;
 use function is_string;

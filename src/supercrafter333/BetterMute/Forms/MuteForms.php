@@ -14,7 +14,6 @@ use dktapps\pmforms\MenuOption;
 use pocketmine\player\Player;
 use pocketmine\Server;
 use supercrafter333\BetterMute\BetterMute;
-use supercrafter333\BetterMute\Manager\Info\Mute;
 use supercrafter333\BetterMute\Manager\Messages\LanguageMgr;
 use supercrafter333\BetterMute\Manager\MuteManager;
 
