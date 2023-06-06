@@ -1,6 +1,6 @@
 name: BetterMute
-version: 1.1.3 #config version: 1.1.0
-api: [4.0.0, 5.0.0]
+version: 1.1.4 #config version: 1.1.0
+api: 5.0.0
 main: supercrafter333\BetterMute\BetterMute
 author: supercrafter333
 
